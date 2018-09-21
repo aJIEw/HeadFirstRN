@@ -54,5 +54,5 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-// 第二个参数对象中，如果是 Action Creator，则会被自动映射成组件上的 props 作为 dispatcher 使用
+// 第二个参数如果是 Action Creator，则会被自动映射成组件上的 props 作为 dispatcher 使用
 export default connect(mapStateToProps, mapDispatchToProps)(Main);
