@@ -12,8 +12,7 @@ class TestKeyboardAvoidingView extends Component {
 
   render() {
     return (
-      <KeyboardAvoidingView style={styles.container} behavior={(Platform.OS === 'android') ? null : 'padding'}
-                            >
+      <KeyboardAvoidingView style={styles.container} behavior={(Platform.OS === 'android') ? null : 'padding'}>
         <View style={styles.realContainer}/>
 
         <View style={styles.section1}/>
