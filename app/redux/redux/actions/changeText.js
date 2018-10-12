@@ -1,3 +1,5 @@
+
+// 当项目复杂到一定程度的时候，Action type 也应该放到固定的地方来管理
 export const CHANGE_TEXT = 'CHANGE_TEXT';
 export const CHANGE_BACK = 'CHANGE_BACK';
 

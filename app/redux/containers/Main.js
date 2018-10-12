@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {bindActionCreators} from "redux";
 import {connect} from 'react-redux';
+import {Actions} from 'react-native-router-flux';
+
 import ChangeableText from "../components/ChangeableText";
 import * as TextChanger from "../redux/actions/changeText";
 
@@ -20,8 +22,12 @@ class Main extends Component {
           <Text>改变文字</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => this.props.actions.changeBack()}>
+        <TouchableOpacity style={styles.recover} onPress={() => this.props.actions.changeBack()}>
           <Text>恢复</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.strict} onPress={() => {Actions.personal()}}>
+          <Text>跳转需要登录页</Text>
         </TouchableOpacity>
       </View>
     );
@@ -38,6 +44,16 @@ const styles = StyleSheet.create({
   changeText: {
     padding: 8,
   },
+  recover: {
+    paddingBottom: 8,
+  },
+  strict: {
+    marginTop: 16,
+    borderWidth: 1,
+    padding: 5,
+    borderColor: 'grey',
+    borderRadius: 5,
+  }
 });
 
 // 将 state 映射成 props，这里我们可以自由组合需要使用到的 state，只要是 store 树中存在的 state 都可以直接拿来使用
