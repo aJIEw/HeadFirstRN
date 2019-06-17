@@ -16,15 +16,17 @@ const instructions = Platform.select({
   'Shake or press menu button for dev menu',
 });
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component {
 
+  // region 实例化期
   constructor(props) {
     super(props);
+    console.log('constructor');
     this.state = {text: 'Useless Placeholder'};
   }
 
   render() {
+    console.log('render');
     let pic = {
       uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
     };
@@ -55,6 +57,37 @@ export default class App extends Component<Props> {
       </View>
     );
   }
+
+  componentDidMount() {
+    console.log('componentDidMount');
+  }
+
+  // endregion
+
+  // region 存在期
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('shouldComponentUpdate');
+    return true;
+  }
+
+  // render()
+
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    console.log('getSnapshotBeforeUpdate');
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log('componentDidUpdate');
+  }
+
+  // endregion
+
+  // region 销毁期
+  componentWillUnmount() {
+    console.log('componentWillUnmount');
+  }
+
+  // endregion
 }
 
 const styles = StyleSheet.create({
