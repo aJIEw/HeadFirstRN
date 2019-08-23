@@ -2,7 +2,14 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
+        <!-- use this to delay app launch from a cold start to eliminate blank space -->
+        <!-- which is not a best practice in splash screen, not recommended -->
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+
+        <!-- use this to specify the status bar color -->
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <!-- use this to replace the blank from a cold start -->
+        <item name="android:windowBackground">@drawable/splash</item>
     </style>
 
 </resources>

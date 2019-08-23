@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {View, StyleSheet, Text, Button} from "react-native";
+import {Button, StyleSheet, Text, View} from "react-native";
 import {connect} from "react-redux";
 import {Actions} from "react-native-router-flux"
 
@@ -11,14 +11,16 @@ class Personal extends Component{
 
   render() {
     return <View style={styles.container}>
-      <Text style={styles.title}>Welcome!</Text>
+      <Text style={styles.title}>{"HOC 是 React 中的一种模式，通过 HOC 我们可以方便地在多个组件中注入一些通用的功能，" +
+      "这样就可以避免重复的代码逻辑。一个 HOC 函数接收一个组件作为参数，并且返回一个新的组件，" +
+      "通过 HOC 函数我们可以为组件添加额外的功能或者数据。"}</Text>
 
       <Button title='返回主页'
-              color={'#091172'}
+              color={'#111'}
               onPress={() => Actions.pop()}/>
 
       <Button title='退出登录'
-              color={'#27bd0e'}
+              color={'red'}
               onPress={() => this.props.logout()}/>
 
     </View>;
@@ -30,11 +32,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#eee',
+    paddingHorizontal: 12,
   },
   title: {
-    textAlign: 'center',
-    fontSize: 18,
     color: '#222',
+    fontSize: 18,
+    textAlign: 'center',
+    lineHeight: 24,
     marginVertical: 55,
   },
 });

@@ -7,53 +7,31 @@
  */
 
 import React, {Component} from 'react';
-import {Alert, Button, Image, Platform, StyleSheet, Text, TextInput, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-  'Double tap R on your keyboard to reload,\n' +
-  'Shake or press menu button for dev menu',
-});
+import NestedScrollView from "./others/NestedScrollView";
+
 
 export default class App extends Component {
 
   // region 实例化期
   constructor(props) {
     super(props);
+
     console.log('constructor');
-    this.state = {text: 'Useless Placeholder'};
+
+    this.state = {
+      title: 'NestedScrollView Test'
+    };
   }
 
   render() {
     console.log('render');
-    let pic = {
-      uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
-    };
 
     return (
-      <View style={{flex: 1}}>
-        <Text style={styles.welcome}>Welcome to My React Native!</Text>
-
-        <Image source={pic} style={{width: 193, height: 110}}/>
-
-        <TextInput style={{height: 40, flexDirection: 'row', borderColor: 'gray', borderWidth: 1}}
-                   placeholder="Type here to translate!"
-                   onChangeText={
-                     (text) => this.setState({text})
-                   }
-        />
-
-        <Text style={{padding: 10, fontSize: 42}}>
-          {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
-        </Text>
-
-        <Button
-          onPress={() => {
-            Alert.alert('You tapped the button!');
-          }}
-          title="Press Me"
-        />
+      <View style={styles.container}>
+        <Text style={styles.title}>{this.state.title}</Text>
+        <NestedScrollView/>
       </View>
     );
   }
@@ -61,7 +39,6 @@ export default class App extends Component {
   componentDidMount() {
     console.log('componentDidMount');
   }
-
   // endregion
 
   // region 存在期
@@ -70,6 +47,7 @@ export default class App extends Component {
     return true;
   }
 
+  // 每次 state 的修改都会造成调用
   // render()
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
@@ -79,43 +57,25 @@ export default class App extends Component {
   componentDidUpdate(prevProps, prevState, snapshot) {
     console.log('componentDidUpdate');
   }
-
   // endregion
 
   // region 销毁期
   componentWillUnmount() {
     console.log('componentWillUnmount');
   }
-
   // endregion
 }
 
 const styles = StyleSheet.create({
-  infoContainer: {
+  container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    paddingTop: 50
   },
-  welcome: {
-    fontSize: 20,
+  title: {
+    color: '#333',
+    fontSize: 22,
+    fontWeight: '700',
     textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-
-  bigblue: {
-    color: 'blue',
-    fontWeight: 'bold',
-    fontSize: 30,
-  },
-  red: {
-    color: 'red',
-    flex: 1,
   },
 
 });
