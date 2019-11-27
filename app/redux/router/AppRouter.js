@@ -7,6 +7,7 @@ import SplashScreen from "react-native-splash-screen";
 import Personal from "../containers/Personal";
 import Main from "../containers/Main";
 import Login from "../containers/Login";
+import TestFetch from "../../network/TestFetch";
 
 
 class AppRouter extends Component {
@@ -16,6 +17,9 @@ class AppRouter extends Component {
         <Scene key='main' component={Main} title={'Head First RN'}/>
         <Scene key='personal' component={Personal} title={'资料页'} back={true}/>
         <Scene key='login' component={Login} title={'登录'} back={true}/>
+
+        <Scene key='testFetch' component={TestFetch} title={'Test Fetch'}/>
+
       </Stack>
     </Router>
   }

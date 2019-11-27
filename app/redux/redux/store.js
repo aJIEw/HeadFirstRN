@@ -3,9 +3,10 @@ import thunkMiddleware from 'redux-thunk';
 
 import textReducer from "./reducers/changeText";
 import authInfo from "./reducers/login";
+import util from "./reducers/util";
 
 
-const allReducers = combineReducers({textReducer, authInfo});
+const allReducers = combineReducers({textReducer, authInfo, util});
 
 const composeEnhancers =
   typeof window === 'object' &&

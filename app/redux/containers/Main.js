@@ -29,6 +29,10 @@ class Main extends Component {
         <TouchableOpacity style={styles.strict} onPress={() => {Actions.personal()}}>
           <Text>跳转需要登录页</Text>
         </TouchableOpacity>
+
+        <TouchableOpacity style={styles.strict} onPress={() => {Actions.testFetch()}}>
+          <Text>Go To...</Text>
+        </TouchableOpacity>
       </View>
     );
   }
