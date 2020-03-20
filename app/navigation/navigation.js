@@ -1,11 +1,11 @@
 import {createStackNavigator,} from 'react-navigation';
 import TestFetch from "../network/TestFetch";
-import TestLayout from "../components/TestLayout";
+import TestFlatList from "../components/TestFlatList";
 
 
 const AppNav = createStackNavigator({
   Home: {screen: TestFetch},
-  Profile: {screen: TestLayout},
+  Profile: {screen: TestFlatList},
 });
 
 export default AppNav;
