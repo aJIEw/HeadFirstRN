@@ -30,7 +30,7 @@ class Main extends Component {
           <Text>跳转需要登录页</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.strict} onPress={() => {Actions.testFetch()}}>
+        <TouchableOpacity style={styles.strict} onPress={() => {Actions.home()}}>
           <Text>Go To...</Text>
         </TouchableOpacity>
       </View>
